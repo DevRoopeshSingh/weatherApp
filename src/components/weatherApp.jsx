@@ -10,8 +10,19 @@ const WeatherApp = () => {
   const BASE_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&units=metric&q=`;
 
   const getWeatherData = async () => {
-    const response = await axios.get(`${BASE_URL}${location}`);
-    setWeatherData(response.data);
+    if(!location) return;
+
+    try{
+      const response = await axios.get(`${BASE_URL}${location}`);
+      setWeatherData(response.data);
+    }catch(error){
+      if(error.response && error.response.status === 404){
+        console.log('Resource not found');
+      }else{
+        console.log("An Error occurred");
+      }
+    }
+   
   };
 
   const handleSubmit = (e) => {
@@ -20,10 +31,7 @@ const WeatherApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">
-        <section>
-            
-        </section>
+    <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center flex-col mb-4">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

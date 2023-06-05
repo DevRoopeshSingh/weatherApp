@@ -2,7 +2,7 @@ import React from "react";
 
 const WeatherCard = ( {weatherData} ) => {
   return (
-    <div className="bg-gray-800 rounded-lg p-6 shadow-md text-white">
+    <div style={{width:'300px'}} className="bg-gray-800 rounded-lg p-6 shadow-md text-white mt-4">
       <h2 className="text-2xl font-bold mb-4">{weatherData?.name}</h2>
       <div className="flex justify-between">
         <div>

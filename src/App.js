@@ -1,5 +1,4 @@
 import './App.css';
-//import WeatherApp from './components/weather';
 import WeatherApp from './components/weatherApp';
 function App() {
 

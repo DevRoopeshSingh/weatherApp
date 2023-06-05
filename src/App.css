@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .app {
-    background: url("./bg.jpeg") center no-repeat;
+    background: url("") center no-repeat;
     background-size: cover;
     height: 100vh;
 }
